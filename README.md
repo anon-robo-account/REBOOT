@@ -43,24 +43,6 @@ For the full installation walkthrough, see the upstream
 The depth integration adds no extra installation steps; it activates
 automatically when an Intel RealSense camera is configured.
 
-## Recording with depth
-
-Depth recording is enabled per-camera in the robot configuration. Each RealSense camera with `depth=True` will produce a synchronized depth stream alongside its RGB stream.
-
-```python
-from lerobot.cameras.realsense import RealsenseCamera
-
-cam = RealsenseCamera(
-    serial_number="...",
-    fps=30,
-    width=640,
-    height=480,
-    depth=True,   # added in this fork
-)
-```
-
-During recording, depth frames are written to the same parquet files as the RGB and proprioception streams. The dataset visualizer renders depth as a false-color overlay alongside the corresponding
-RGB view (see screenshot in the REBOOT paper appendix).
 
 ## REBOOT dataset
 
